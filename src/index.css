@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+
+  :root {
+    --background: 210 58% 12%;         /* #0B1F31 - replacement for white */
+    --foreground: 0 0% 100%;           /* #FFFFFF - white text for readability */
+
+    --card: 210 58% 12%;               /* #0B1F31 - replacement for white */
+    --card-foreground: 0 0% 100%;      /* #FFFFFF - white text */
+
+    --popover: 210 58% 12%;            /* #0B1F31 - replacement for white */
+    --popover-foreground: 0 0% 100%;  /* #FFFFFF - white text */
+
+    --primary: 194 85% 44%;            /* #089CD5 - new primary blue */
+    --primary-foreground: 0 0% 100%;  /* #FFFFFF - white text */
+
+    --secondary: 210 58% 7%;           /* #071521 - dark background for sections */
+    --secondary-foreground: 0 0% 100%; /* #FFFFFF - white text */
+
+    --muted: 210 58% 15%;             /* Darker variant of background */
+    --muted-foreground: 0 0% 80%;     /* Light gray for muted text */
+
+    --accent: 194 85% 44%;             /* Match primary blue */
+    --accent-foreground: 0 0% 100%;   /* #FFFFFF - white text */
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 58% 20%;            /* Darker border */
+    --input: 210 58% 20%;             /* Darker input */
+    --ring: 194 85% 44%;              /* Match primary blue */
+
+    --radius: 0.75rem;
+    
+    /* Custom design tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(197, 73%, 47%));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+    --gradient-accent: linear-gradient(90deg, hsl(var(--primary)), hsl(194 85% 35%));
+    --shadow-card: 0 4px 6px -1px hsl(var(--primary) / 0.1), 0 2px 4px -1px hsl(var(--primary) / 0.06);
+    --shadow-hero: 0 20px 25px -5px hsl(var(--primary) / 0.1), 0 10px 10px -5px hsl(var(--primary) / 0.04);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 210 58% 12%;     /* #0B1F31 - replacement for white */
+    --sidebar-foreground: 0 0% 100%;      /* #FFFFFF - white text */
+    --sidebar-primary: 194 85% 44%;        /* #089CD5 - new primary blue */
+    --sidebar-primary-foreground: 0 0% 100%; /* #FFFFFF - white text */
+    --sidebar-accent: 210 58% 15%;         /* Darker variant */
+    --sidebar-accent-foreground: 0 0% 100%; /* #FFFFFF - white text */
+    --sidebar-border: 210 58% 20%;         /* Darker border */
+    --sidebar-ring: 194 85% 44%;            /* Match primary blue */
+  }
+
+  .dark {
+    --background: 210 58% 7%;          /* #071521 - dark background */
+    --foreground: 0 0% 100%;           /* #FFFFFF - white text */
+
+    --card: 210 58% 7%;               /* #071521 - dark background */
+    --card-foreground: 0 0% 100%;     /* #FFFFFF - white text */
+
+    --popover: 210 58% 7%;            /* #071521 - dark background */
+    --popover-foreground: 0 0% 100%; /* #FFFFFF - white text */
+
+    --primary: 194 85% 44%;           /* #089CD5 - new primary blue */
+    --primary-foreground: 0 0% 100%; /* #FFFFFF - white text */
+
+    --secondary: 210 58% 7%;         /* #071521 - dark background */
+    --secondary-foreground: 0 0% 100%; /* #FFFFFF - white text */
+
+    --muted: 210 58% 10%;            /* Darker variant */
+    --muted-foreground: 0 0% 80%;   /* Light gray for muted text */
+
+    --accent: 194 85% 44%;           /* Match primary blue */
+    --accent-foreground: 0 0% 100%; /* #FFFFFF - white text */
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 58% 15%;           /* Darker border */
+    --input: 210 58% 15%;            /* Darker input */
+    --ring: 194 85% 44%;             /* Match primary blue */
+
+    --sidebar-background: 210 58% 7%; /* #071521 - dark background */
+    --sidebar-foreground: 0 0% 100%; /* #FFFFFF - white text */
+    --sidebar-primary: 194 85% 44%;   /* #089CD5 - new primary blue */
+    --sidebar-primary-foreground: 0 0% 100%; /* #FFFFFF - white text */
+    --sidebar-accent: 210 58% 10%;    /* Darker variant */
+    --sidebar-accent-foreground: 0 0% 100%; /* #FFFFFF - white text */
+    --sidebar-border: 210 58% 15%;    /* Darker border */
+    --sidebar-ring: 194 85% 44%;      /* Match primary blue */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+p {
+  text-align: justify;
+}
