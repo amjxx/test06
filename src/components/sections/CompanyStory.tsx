@@ -107,7 +107,7 @@ const CompanyStory = () => {
           </div>
 
           {/* Office Image */}
-          <div className="relative lg:sticky lg:top-9 py-0">
+          <div className="relative lg:sticky lg:top-10 py-0 pt-14">
   <img 
     src={officeImage} 
     alt="Shamsul Imara Technical Services office building" 

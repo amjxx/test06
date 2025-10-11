@@ -110,3 +110,8 @@ All colors MUST be HSL.
 p {
   text-align: justify;
 }
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}

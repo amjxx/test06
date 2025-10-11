@@ -34,7 +34,7 @@ const WhyChooseUs = () => {
 
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <h2 className="text-5xl md:text-4xl font-bold text-foreground mb-6">
             Why Choose Shamsul Imara?
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -42,22 +42,22 @@ const WhyChooseUs = () => {
           </p>
         </div>
 
-        {/* Advantages Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        {/* Advantages Grid - 2 cards per row on desktop */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 lg:gap-10 mb-16 pl-10">
           {advantages.map((advantage, index) => (
             <Card key={index} className="group hover:shadow-card transition-all duration-300 border-border/50 bg-card/50 backdrop-blur-sm">
-              <CardContent className="p-6 flex flex-col items-center text-center h-full">
-                <div className="w-28 h-28 flex items-center justify-center mb-4">
+              <CardContent className="p-6 md:p-8 lg:p-10 flex flex-col items-center text-center h-full">
+                <div className="w-32 h-32 md:w-40 md:h-40 lg:w-[500px] lg:h-[300px] flex items-center justify-center mb-5">
                   <img 
                     src={advantage.image} 
                     alt={advantage.title} 
-                    className="max-w-60 max-h-60 object-contain rounded-lg group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">
+                <h3 className="text-2xl md:text-3xl font-semibold text-foreground mb-3">
                   {advantage.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                   {advantage.description}
                 </p>
               </CardContent>
@@ -68,7 +68,7 @@ const WhyChooseUs = () => {
   
 </section>
         {/* Certifications & Stats */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center pl-14">
           
           {/* Certifications List */}
           <div>

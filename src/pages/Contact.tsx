@@ -16,7 +16,7 @@ const Contact = () => {
                 Get in Touch
               </h1>
               <p className="text-xl text-primary-foreground/90">
-                Ready to discuss your manpower and technical service needs? Contact us today
+                Ready to discuss your workforce solutioins and technical service needs? Contact us today
               </p>
             </div>
           </div>

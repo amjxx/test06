@@ -51,7 +51,7 @@ const Hero = () => {
         }
       `}</style>
       
-      <section className="relative h-[550px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[420px] sm:h-[500px] md:h-[550px] flex items-center justify-center overflow-hidden">
         {/* 🖼️ Background Images with Smooth Zoom + Fade Transition */}
         <div className="absolute inset-0 z-0">
           {images.map((img, index) => (
@@ -71,33 +71,34 @@ const Hero = () => {
                   animation: index === currentImage ? 'smoothZoom 10s ease-out forwards' : 'none'
                 }}
               />
+              
             </div>
           ))}
           <div className="absolute inset-0 bg-gradient-to-r from-secondary/5 via-secondary/70 to-transparent" />
         </div>
 
         {/* ✨ Content */}
-        <div className="relative z-10 container mx-auto px-24 py-20">
-          <div className="max-w-3xl">
-            <h1 className="text-5xl md:text-6xl font-bold text-secondary-foreground mb-6 animate-fade-in">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 md:px-8 lg:px-24 py-10 sm:py-14 md:py-20">
+          <div className="max-w-4xl md:max-w-5xl lg:max-w-6xl">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-secondary-foreground mb-4 sm:mb-6 animate-fade-in">
               Shamsul Imara
-              <span className="block text-accent text-2xl md:text-4xl font-medium">
+              <span className="block text-accent text-lg sm:text-2xl md:text-4xl font-medium">
                 Solutions Across UAE
               </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-secondary-foreground/90 mb-8 animate-slide-up">
-              Shamsul Imara Technical Services Provides Skilled Manpower, Interior
+            <p className="text-base sm:text-lg md:text-2xl text-secondary-foreground/90 mb-4 sm:mb-6 animate-slide-up">
+              Shamsul Imara Technical Services Provides Skilled Workfroce solutions, Interior
               Works, and Contracting Services for the Construction, Oil & Gas, and
               Process Industries.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 animate-scale-in">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-scale-in">
               {/* ✅ Request a Quote Button */}
               <Button
                 asChild
                 size="lg"
-                className="bg-gradient-primary hover:opacity-90 text-lg px-8 py-6 gap-3 shadow-hero"
+                className="bg-gradient-primary hover:opacity-90 text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 gap-3 shadow-hero"
               >
                 <a href="mailto:info@shamsulimara.com?subject=Quote%20Request&body=Hello%2C%20I%20would%20like%20to%20request%20a%20quote.">
                   Request a Quote
@@ -109,7 +110,7 @@ const Hero = () => {
               <Button
                 onClick={handleWhatsApp}
                 size="lg"
-                className="text-lg px-8 py-6 gap-3 bg-[#25D366] hover:bg-[#128C7E] text-white"
+                className="text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 gap-3 bg-[#25D366] hover:bg-[#128C7E] text-white"
               >
                 <MessageCircle className="h-5 w-5" />
                 WhatsApp Us
@@ -119,9 +120,9 @@ const Hero = () => {
         </div>
 
         {/* ⬇️ Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-secondary-foreground/40 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-secondary-foreground/60 rounded-full mt-2 animate-pulse" />
+        <div className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-5 sm:w-6 h-8 sm:h-10 border-2 border-secondary-foreground/40 rounded-full flex justify-center">
+            <div className="w-1 h-2.5 sm:h-3 bg-secondary-foreground/60 rounded-full mt-2 animate-pulse" />
           </div>
         </div>
       </section>

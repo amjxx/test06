@@ -40,19 +40,18 @@ const ContactForm = () => {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
-        <Label htmlFor="fullName">Full Name *</Label>
         <Input
           id="fullName"
           name="fullName"
           value={formData.fullName}
           onChange={handleChange}
           required
-          className="mt-1"
+          placeholder="Full Name *"
+          className="border-[1px]"
         />
       </div>
 
       <div>
-        <Label htmlFor="email">Email *</Label>
         <Input
           id="email"
           type="email"
@@ -60,12 +59,12 @@ const ContactForm = () => {
           value={formData.email}
           onChange={handleChange}
           required
-          className="mt-1"
+          placeholder="Email *"
+          className="border-[1px]"
         />
       </div>
 
       <div>
-        <Label htmlFor="phone">Phone Number *</Label>
         <Input
           id="phone"
           type="tel"
@@ -73,25 +72,30 @@ const ContactForm = () => {
           value={formData.phone}
           onChange={handleChange}
           required
-          className="mt-1"
+          placeholder="Phone Number *"
+          className="border-[1px]"
         />
       </div>
 
       <div>
-        <Label htmlFor="message">Message *</Label>
         <Textarea
           id="message"
           name="message"
           value={formData.message}
           onChange={handleChange}
           required
-          className="mt-1 min-h-[120px]"
+          placeholder="Message *"
+          className="min-h-[120px] border-[1px]"
         />
       </div>
 
-      <Button type="submit" className="bg-gradient-primary hover:opacity-90 w-full py-4">
-        {isSubmitting ? "Opening Gmail..." : "Send Message"}
-      </Button>
+      <Button
+  type="submit"
+  className="bg-gradient-primary hover:opacity-90 w-full py-4 text-lg"
+>
+  {isSubmitting ? "Opening Gmail..." : "Send Message"}
+</Button>
+
     </form>
   );
 };
@@ -109,7 +113,7 @@ const ContactSection = () => {
   ];
 
   return (
-    <div className="space-y-8 pl-[130px]">
+    <div className="space-y-8 px-4 sm:px-6 md:px-8 lg:pl-[130px]">
       {/* Contact Form + Info */}
       <Card className="bg-card/50 border-border/50 ">
         <CardContent className="p-6">
@@ -118,47 +122,47 @@ const ContactSection = () => {
             Please fill out the form below and our team will get in touch with you as soon as possible. For urgent matters, feel free to use our phone or WhatsApp for immediate assistance.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {/* Left: Form */}
-            <div>
+            <div className="order-1 border border-black/40 shadow-2xl rounded-lg p-4 bg-card/80">
               <ContactForm />
             </div>
 
             {/* Right: Contact Info */}
-            <div className="flex flex-col justify-start gap-4 pr-10">
-              <h4 className="font-semibold text-foreground text-lg">Contact Information</h4>
-              <p className="text-muted-foreground">Our support team is available 24/7 to answer your questions.</p>
-              <div className="space-y-2">
-                <p className="flex items-center gap-2"><span className="font-semibold">Phone:</span> +971 558700738</p>
-                <p className="flex items-center gap-2"><span className="font-semibold">Email:</span> info@shamsulimara.com</p>
-                <p className="flex items-center gap-2"><span className="font-semibold">Address:</span> Dubai, UAE</p>
+            <div className="flex flex-col justify-start gap-4 pr-0 md:pr-6 lg:pr-10 order-3 md:order-2 pl-[100px]">
+  <h2 className="font-semibold text-foreground text-3xl">Contact Information</h2> {/* Increased from text-lg to text-2xl */}
+  <p className="text-muted-foreground text-lg">Our support team is available 24/7 to answer your questions.</p> {/* Added text-lg */}
+  <div className="space-y-2">
+    <p className="flex items-center gap-2 text-lg"><span className="font-semibold">Phone:</span> +971 558700738</p>
+    <p className="flex items-center gap-2 text-lg"><span className="font-semibold">Email:</span> info@shamsulimara.com</p>
+    <p className="flex items-center gap-2 text-lg"><span className="font-semibold">Address:</span> Dubai, UAE</p>
+  </div>
+</div>
+
+            
+         
+
+            {/* Quick Actions - full width below form/info on md+, directly under form on mobile */}
+            <div className="order-2 md:order-3 md:col-span-2">
+              <div className="mt-2 md:mt-4 grid grid-cols-3 gap-3">
+                <Button onClick={handlePhoneClick} className="bg-secondary text-primary-foreground hover:bg-primary/90 gap-2 w-full">
+                  <Phone className="h-4 w-4" />
+                  <span className="hidden sm:inline">Phone</span>
+                </Button>
+                <Button onClick={handleWhatsAppClick} className="bg-secondary text-primary-foreground hover:bg-primary/90 gap-2 w-full">
+                  <MessageCircle className="h-4 w-4" />
+                  <span className="hidden sm:inline">WhatsApp</span>
+                </Button>
+                <Button onClick={handleEmailClick} className="bg-secondary text-primary-foreground hover:bg-primary/90 gap-2 w-full">
+                  <Mail className="h-4 w-4" />
+                  <span className="hidden sm:inline">Email</span>
+                </Button>
               </div>
-              <p className="text-muted-foreground mt-4">You can also reach us via WhatsApp for instant support.</p>
             </div>
           </div>
         </CardContent>
       </Card>
 
-      {/* Contact Methods Cards */}
-      <div className="space-y-4">
-        {contactMethods.map((method, index) => (
-          <Card key={index} className="group hover:shadow-card transition-all duration-300 bg-card/50 border-border/50">
-            <CardContent className="p-6 flex items-start gap-4">
-              <div className={`w-12 h-12 rounded-full bg-current/10 flex items-center justify-center ${method.color} flex-shrink-0`}>
-                <method.icon className="h-6 w-6" />
-              </div>
-              <div className="flex-1">
-                <h3 className="font-semibold text-foreground text-lg mb-1">{method.title}</h3>
-                <p className="text-foreground font-medium mb-1">{method.info}</p>
-                <p className="text-sm text-muted-foreground mb-3">{method.description}</p>
-                <Button onClick={method.action} variant="outline" size="sm" className="gap-2 hover:bg-primary hover:text-primary-foreground">
-                  <method.icon className="h-4 w-4" /> {method.buttonText}
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
 
       {/* Office Location */}
       <Card className="bg-card/50 border-border/50">
@@ -177,26 +181,9 @@ const ContactSection = () => {
         </CardContent>
       </Card>
 
-      {/* Company Resources */}
-      <Card className="bg-gradient-primary text-primary-foreground">
-        <CardContent className="p-6">
-          <h3 className="font-semibold text-lg mb-3">Company Resources</h3>
-          <p className="text-primary-foreground/90 mb-4">Download our company profile and certifications for detailed information about our services and credentials.</p>
-          <div className="space-y-2">
-            <Button variant="outline" className="w-full gap-2 border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10"><Download className="h-4 w-4" /> Company Profile (PDF)</Button>
-            <Button variant="outline" className="w-full gap-2 border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10"><Download className="h-4 w-4" /> Service Catalog (PDF)</Button>
-          </div>
-        </CardContent>
-      </Card>
+    
 
-      {/* Emergency Support */}
-      <Card className="border-accent/20 bg-accent/5">
-        <CardContent className="p-6">
-          <h3 className="font-semibold text-foreground text-lg mb-2">24/7 Emergency Support</h3>
-          <p className="text-muted-foreground mb-3">For urgent project requirements and emergency workforce deployment.</p>
-          <Button onClick={handlePhoneClick} className="w-full bg-accent hover:bg-accent/90 gap-2"><Phone className="h-4 w-4" /> Emergency Hotline: +971558700738</Button>
-        </CardContent>
-      </Card>
+  
     </div>
   );
 };

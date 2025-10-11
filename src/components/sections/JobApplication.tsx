@@ -48,7 +48,9 @@ const JobApplication = () => {
     "Gypsum Installer",
     "Tile Installer",
     "Steel Fabricator",
+    "Fabricators",
     "Other"
+    
   ];
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -162,7 +164,7 @@ Please let me know about the next steps in the application process.`
                       <span className="bg-primary-foreground/20 px-2 py-1 rounded">5+ positions</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Civil Engineers</span>
+                      <span>Fabricators</span>
                       <span className="bg-primary-foreground/20 px-2 py-1 rounded">3+ positions</span>
                     </div>
                     <div className="flex justify-between">
@@ -244,59 +246,64 @@ Please let me know about the next steps in the application process.`
             {/* Application Form */}
            {/* Application Form */}
            <div className="lg:col-span-2">
-              <Card className="shadow-card">
+             <Card className="shadow-2xl border border-black/40">
                 <CardHeader>
                   <CardTitle className="text-2xl text-foreground">Submit Your Application</CardTitle>
                   <p className="text-muted-foreground">
-                    Fill out the form below. Clicking submit will open Gmail with your details pre-filled. You can submit Your CV to info@shamsulimara.com.
+                  We are always looking for talented and passionate individuals to join our team.
+Please fill out the form below and send your résumé / CV with your photo to info@shamsulimara.com. Our HR team will review your application and get in touch if your profile matches any of our current openings.<br/>
+
+ <br/>
+
+📎 Required: Updated CV/Resume (PDF or Word) with photo
                   </p>
                 </CardHeader>
                 <CardContent>
                   <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-4">
+                    <div className="grid md:grid-cols-2 gap-4 border:2px solid #0056b3">
                       <div>
-                        <Label htmlFor="fullName">Full Name *</Label>
                         <Input
                           id="fullName"
                           value={formData.fullName}
                           onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                           required
-                          className="mt-1"
+                          placeholder="Full Name *"
+                          className="border-[1px]"
                         />
                       </div>
                       <div>
-                        <Label htmlFor="nationality">Nationality *</Label>
                         <Input
                           id="nationality"
                           value={formData.nationality}
                           onChange={(e) => setFormData({ ...formData, nationality: e.target.value })}
                           required
-                          className="mt-1"
+                          placeholder="Nationality *"
+                          className="border-[1px]"
                         />
                       </div>
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <Label htmlFor="email">Email Address *</Label>
                         <Input
                           id="email"
                           type="email"
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           required
-                          className="mt-1"
+                          placeholder="Email Address *"
+                          className="border-[1px]"
                         />
                       </div>
                       <div>
-                        <Label htmlFor="phone">Phone Number *</Label>
                         <Input
                           id="phone"
                           type="tel"
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                           required
-                          className="mt-1"
+                          placeholder="Phone Number *"
+                          className="border-[1px]"
                         />
                       </div>
                     </div>
@@ -305,7 +312,7 @@ Please let me know about the next steps in the application process.`
                       <div>
                         <Label htmlFor="position">Position Applying For *</Label>
                         <Select value={formData.position} onValueChange={(value) => setFormData({ ...formData, position: value })}>
-                          <SelectTrigger className="mt-1">
+                          <SelectTrigger className="mt-1 border-[1px]">
                             <SelectValue placeholder="Select position" />
                           </SelectTrigger>
                           <SelectContent>
@@ -320,7 +327,7 @@ Please let me know about the next steps in the application process.`
                       <div>
                         <Label htmlFor="experience">Years of Experience *</Label>
                         <Select value={formData.experience} onValueChange={(value) => setFormData({ ...formData, experience: value })}>
-                          <SelectTrigger className="mt-1">
+                          <SelectTrigger className="mt-1 border-[1px]">
                             <SelectValue placeholder="Select experience" />
                           </SelectTrigger>
                           <SelectContent>
@@ -335,25 +342,23 @@ Please let me know about the next steps in the application process.`
                     </div>
 
                     <div>
-                      <Label htmlFor="location">Current Location *</Label>
                       <Input
                         id="location"
                         value={formData.location}
                         onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                        placeholder="e.g., Dubai, UAE"
+                        placeholder="Current Location * (e.g., Dubai, UAE)"
                         required
-                        className="mt-1"
+                        className="border-[1px]"
                       />
                     </div>
 
                     <div>
-                      <Label htmlFor="message">Cover Letter / Additional Information</Label>
                       <Textarea
                         id="message"
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        placeholder="Tell us about your relevant experience, skills, and why you'd like to join our team..."
-                        className="mt-1 min-h-[120px]"
+                        placeholder="Cover Letter / Additional Information - Tell us about your relevant experience, skills, and why you'd like to join our team..."
+                        className="min-h-[120px] border-[1px]"
                       />
                     </div>
 
