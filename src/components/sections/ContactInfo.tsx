@@ -102,14 +102,42 @@ const ContactForm = () => {
 
 // Contact Info Section
 const ContactSection = () => {
-  const handlePhoneClick = () => window.open("tel:+971558700738");
-  const handleEmailClick = () => window.open("mailto:info@shamsulimaratech.com");
+  const handlePhoneClick = () => {
+    const phoneNumber = "+971 55 870 0738";
+    navigator.clipboard.writeText(phoneNumber).then(() => {
+      alert(`Phone number copied to clipboard: ${phoneNumber}\n\nYou can now paste it into your phone app or dialer.`);
+    }).catch(() => {
+      // Fallback: show the number in an alert
+      alert(`Phone Number: ${phoneNumber}\n\nPlease copy this number to call us.`);
+    });
+  };
+  const handleEmailClick = () => {
+    const to = "info@shamsulimara.com";
+    const subject = encodeURIComponent("Inquiry from Website");
+    const body = encodeURIComponent(
+      `Dear Shamsul Imara Team,
+
+I am writing to inquire about your technical services. Please provide me with more information about:
+
+- Services offered
+- Pricing details
+- Availability
+- Any other relevant information
+
+I look forward to hearing from you soon.
+
+Best regards,
+[Your Name]`
+    );
+    const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${subject}&body=${body}`;
+    window.open(gmailLink, "_blank");
+  };
   const handleWhatsAppClick = () => window.open("https://wa.me/971558700738?text=Hello!%20I%27d%20like%20to%20inquire%20about%20your%20technical%20services.", "_blank");
 
   const contactMethods = [
-    { icon: Phone, title: "Phone", info: "+971558700738", description: "Call us for immediate assistance", action: handlePhoneClick, buttonText: "Call Now", color: "text-accent" },
+    { icon: Phone, title: "Phone", info: "+971 55 870 0738", description: "Call us for immediate assistance", action: handlePhoneClick, buttonText: "Call Now", color: "text-accent" },
     { icon: MessageCircle, title: "WhatsApp", info: "+971-55 870 0738", description: "Chat with us instantly", action: handleWhatsAppClick, buttonText: "WhatsApp", color: "text-[#25D366]" },
-    { icon: Mail, title: "Email", info: "info@shamsulimaratech.com", description: "Send us your detailed inquiry", action: handleEmailClick, buttonText: "Send Email", color: "text-primary" }
+    { icon: Mail, title: "Email", info: "info@shamsulimara.com", description: "Send us your detailed inquiry", action: handleEmailClick, buttonText: "Send Email", color: "text-primary" }
   ];
 
   return (
@@ -189,3 +217,4 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
+
