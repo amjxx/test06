@@ -53,66 +53,57 @@ const JobApplication = () => {
     
   ];
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    try {
-      // Create template parameters for EmailJS
-      const templateParams = {
-        to_email: 'amjadmm127@gmail.com',
-        from_name: formData.fullName,
-        from_email: formData.email,
-        phone: formData.phone,
-        position: formData.position,
-        experience: formData.experience,
-        nationality: formData.nationality,
-        location: formData.location,
-        message: formData.message,
-        subject: `New Job Application - ${formData.position}`,
-        cv_file: cvFile?.name || 'No CV uploaded',
-        reply_to: formData.email
-      };
+    const to = "info@shamsulimara.com";
+    const subject = encodeURIComponent(`Job Application - ${formData.position}`);
+    const body = encodeURIComponent(
+      `Dear HR Team,
 
-      // Send email using EmailJS
-      const result = await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        templateParams,
-        EMAILJS_PUBLIC_KEY
-      );
+I am writing to express my interest in the ${formData.position} position at Shamsul Imara Technical Services.
 
-      if (result.status === 200) {
-        toast({
-          title: "Application Sent Successfully",
-          description: "Thank you for your interest! We'll review your application and get back to you within 3-5 business days.",
-        });
-        
-        // Reset form
-        setFormData({
-          fullName: "",
-          email: "",
-          phone: "",
-          position: "",
-          experience: "",
-          nationality: "",
-          location: "",
-          message: ""
-        });
-        setCvFile(null);
-      } else {
-        throw new Error('Failed to send email');
-      }
-    } catch (error) {
-      console.error('EmailJS Error:', error);
-      toast({
-        title: "Failed to Send Application",
-        description: "There was an error sending your application. Please try again or contact us directly.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+Personal Information:
+- Full Name: ${formData.fullName}
+- Email: ${formData.email}
+- Phone: ${formData.phone}
+- Nationality: ${formData.nationality}
+- Current Location: ${formData.location}
+
+Professional Information:
+- Position Applied For: ${formData.position}
+- Years of Experience: ${formData.experience}
+
+Cover Letter/Additional Information:
+${formData.message}
+
+CV/Resume: ${cvFile?.name || 'Will be sent separately'}
+
+I have attached my updated CV/Resume with photo as requested. I am excited about the opportunity to contribute to your team and would welcome the chance to discuss my qualifications further.
+
+Thank you for considering my application.
+
+Best regards,
+${formData.fullName}`
+    );
+
+    const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${subject}&body=${body}`;
+    window.open(gmailLink, "_blank");
+
+    // Reset form
+    setFormData({
+      fullName: "",
+      email: "",
+      phone: "",
+      position: "",
+      experience: "",
+      nationality: "",
+      location: "",
+      message: ""
+    });
+    setCvFile(null);
+    setIsSubmitting(false);
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
