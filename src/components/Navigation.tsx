@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {Mail, Menu, X, Phone, Globe, } from "lucide-react";
-import logoImage from "@/assets/logo.jpg";
+import logoImage from "@/assets/logo.webp";
 
 
 const Navigation = () => {

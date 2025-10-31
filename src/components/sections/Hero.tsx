@@ -3,21 +3,21 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, MessageCircle } from "lucide-react";
 
 // 🖼️ Import your images (replace these with your actual files)
-import heroImage1 from "@/assets/banner2.jpg";
-import heroImage2 from "@/assets/banner1.jpg";
-import heroImage3 from "@/assets/banner3.jpg";
+import heroImage1 from "@/assets/banner2.webp";
+import heroImage2 from "@/assets/banner1.webp";
+import heroImage3 from "@/assets/banner3.webp";
 
 const Hero = () => {
   const [currentImage, setCurrentImage] = useState(0);
 
   // 🌀 Image array
-  const images = [heroImage1, heroImage2, heroImage3];
+  const images = [heroImage3, heroImage2, heroImage1];
 
   // ⏱️ Auto change background every 3 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 3000);
+    }, 2000);
     return () => clearInterval(interval);
   }, [images.length]);
 
