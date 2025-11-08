@@ -1,7 +1,7 @@
 const FloatingWhatsApp = () => {
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent("Hello! I'm interested in your technical services. Can you provide more information?");
-    window.open(`https://wa.me/971558700738?text=${message}`, '_blank');
+    window.open(`https://wa.me/971523184375?text=${message}`, '_blank');
   };
   
   return (
