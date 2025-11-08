@@ -25,7 +25,7 @@ const Hero = () => {
     const message = encodeURIComponent(
       "Hello! I'd like to request a quote for your technical services."
     );
-    window.open(`https://wa.me/971558700738?text=${message}`, "_blank");
+    window.open(`https://wa.me/971523184375?text=${message}`, "_blank");
   };
 
   const handleQuoteRequest = () => {
