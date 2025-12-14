@@ -163,6 +163,10 @@ Please let me know about the next steps in the application process.`
                       <span className="bg-primary-foreground/20 px-2 py-1 rounded">4+ positions</span>
                     </div>
                     <div className="flex justify-between">
+                      <span>Plumbers</span>
+                      <span className="bg-primary-foreground/20 px-2 py-1 rounded">3+ positions</span>
+                    </div>
+                    <div className="flex justify-between">
                       <span>Site Supervisors</span>
                       <span className="bg-primary-foreground/20 px-2 py-1 rounded">2+ positions</span>
                     </div>
