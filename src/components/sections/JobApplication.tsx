@@ -229,7 +229,7 @@ Please let me know about the next steps in the application process.`
                   </p>
                   <Button variant="outline" className="w-full gap-2">
                     <Phone className="h-4 w-4" />
-                    +971 52 3184375
+                    +971 52-3184375
                   </Button>
                 </CardContent>
               </Card>
