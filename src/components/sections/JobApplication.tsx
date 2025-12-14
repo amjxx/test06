@@ -225,7 +225,7 @@ Please let me know about the next steps in the application process.`
                   </p>
                   <Button variant="outline" className="w-full gap-2">
                     <Phone className="h-4 w-4" />
-                    +971 558700738
+                    +971 523184375
                   </Button>
                 </CardContent>
               </Card>
