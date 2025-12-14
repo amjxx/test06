@@ -161,7 +161,7 @@ Best regards,
   <h2 className="font-semibold text-foreground text-3xl">Contact Information</h2> {/* Increased from text-lg to text-2xl */}
   <p className="text-muted-foreground text-lg">Our support team is available 24/7 to answer your questions.</p> {/* Added text-lg */}
   <div className="space-y-2">
-    <p className="flex items-center gap-2 text-lg"><span className="font-semibold">Phone:</span> +971 558700738</p>
+    <p className="flex items-center gap-2 text-lg"><span className="font-semibold">Phone:</span> +971 523184375</p>
     <p className="flex items-center gap-2 text-lg"><span className="font-semibold">Email:</span> info@shamsulimara.com</p>
     <p className="flex items-center gap-2 text-lg"><span className="font-semibold">Address:</span> Dubai, UAE</p>
   </div>
