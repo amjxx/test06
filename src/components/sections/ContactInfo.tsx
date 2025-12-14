@@ -103,7 +103,7 @@ const ContactForm = () => {
 // Contact Info Section
 const ContactSection = () => {
   const handlePhoneClick = () => {
-    const phoneNumber = "+971 55 870 0738";
+    const phoneNumber = "+971 55 8700738";
     navigator.clipboard.writeText(phoneNumber).then(() => {
       alert(`Phone number copied to clipboard: ${phoneNumber}\n\nYou can now paste it into your phone app or dialer.`);
     }).catch(() => {
