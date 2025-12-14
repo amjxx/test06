@@ -135,8 +135,8 @@ Best regards,
   const handleWhatsAppClick = () => window.open("https://wa.me/971558700738?text=Hello!%20I%27d%20like%20to%20inquire%20about%20your%20technical%20services.", "_blank");
 
   const contactMethods = [
-    { icon: Phone, title: "Phone", info: "+971 55 870 0738", description: "Call us for immediate assistance", action: handlePhoneClick, buttonText: "Call Now", color: "text-accent" },
-    { icon: MessageCircle, title: "WhatsApp", info: "+971-55 870 0738", description: "Chat with us instantly", action: handleWhatsAppClick, buttonText: "WhatsApp", color: "text-[#25D366]" },
+    { icon: Phone, title: "Phone", info: "+971 52 318 4375", description: "Call us for immediate assistance", action: handlePhoneClick, buttonText: "Call Now", color: "text-accent" },
+    { icon: MessageCircle, title: "WhatsApp", info: "+971-52 318 4375", description: "Chat with us instantly", action: handleWhatsAppClick, buttonText: "WhatsApp", color: "text-[#25D366]" },
     { icon: Mail, title: "Email", info: "info@shamsulimara.com", description: "Send us your detailed inquiry", action: handleEmailClick, buttonText: "Send Email", color: "text-primary" }
   ];
 
