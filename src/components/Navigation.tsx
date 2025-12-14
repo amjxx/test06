@@ -58,7 +58,7 @@ const Navigation = () => {
   {/* ✅ Combined rectangle for phone + email */}
   <div className="flex items-center justify-center bg-secondary text-white px-4 py-2 rounded-r-2xl hover:opacity-90 cursor-pointer">
   <Phone className="h-4 w-4 mr-2" />
-  <span className="mr-4">971 55 8700738</span>
+  <span className="mr-4">971 52 3184375</span>
   <span className="border-l border-white h-4 mx-3"></span>
   <Mail className="h-4 w-4 mr-2" />
   <span>info@shamsulimara.com</span>
