@@ -1,3 +1,4 @@
+import whatsapp from "../assets/whatsapp.png"
 const FloatingWhatsApp = () => {
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent("Hello! I'm interested in your technical services. Can you provide more information?");
@@ -45,7 +46,7 @@ const FloatingWhatsApp = () => {
           }}
         >
           <img 
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/WhatsApp_icon.png/598px-WhatsApp_icon.png"
+            src={whatsapp}
             alt="WhatsApp"
             style={{
               width: '100%',
@@ -53,6 +54,7 @@ const FloatingWhatsApp = () => {
               objectFit: 'cover'
             }}
           />
+           
         </div>
       </div>
     </div>
